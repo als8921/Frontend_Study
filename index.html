@@ -6,10 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="button" value="hi" onclick="alert('HI')">
-    <input type="text" onchange="alert('changed')">
-    <input type="text" onkeydown="alert('keydown')">
-
-    <!-- onclick, onchange, onkeydown 이런 것들을 Event라고 부름 -->
+    <input type="button" value="day" 
+        onclick="document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black'">
+    <input type="button" value="night" 
+        onclick="document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white'">
+    <h1>Hello World</h1>
+    
 </body>
 </html>
