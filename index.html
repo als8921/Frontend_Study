@@ -5,35 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      function LinksSetColor(color) {
-        var alist = document.querySelectorAll("a");
-        var i = 0;
-        while (i < alist.length) {
-          alist[i].style.color = color;
-          i++;
-        }
-      }
-      function BodySetColor(color) {
-        document.querySelector("body").style.color = color;
-      }
-      function BodySetBackgroungColor(color) {
-        document.querySelector("body").style.backgroundColor = color;
-      }
+      var Body = {
+        setColor: function (color) {
+          document.querySelector("body").style.color = color;
+        },
+        setBackgroungColor: function (color) {
+          document.querySelector("body").style.backgroundColor = color;
+        },
+      };
+
+      var Links = {
+        setColor: function (color) {
+          var alist = document.querySelectorAll("a");
+          var i = 0;
+          while (i < alist.length) {
+            alist[i].style.color = color;
+            i++;
+          }
+        },
+      };
 
       function nightDayHandler(self) {
         var target = document.querySelector("body");
         if (self.value === "night") {
-          BodySetBackgroungColor("black");
-          BodySetColor("white");
+          Body.setBackgroungColor("black");
+          Body.setColor("white");
           self.value = "day";
 
-          LinksSetColor("powderblue");
+          Links.setColor("powderblue");
         } else {
-          BodySetBackgroungColor("white");
-          BodySetColor("black");
+          Body.setBackgroungColor("white");
+          Body.setColor("black");
           self.value = "night";
 
-          LinksSetColor("blue");
+          Links.setColor("blue");
         }
       }
     </script>
